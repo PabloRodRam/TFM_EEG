@@ -1,0 +1,60 @@
+# ============================================================
+# Git ignore — EEG Seizure Prediction
+# ============================================================
+
+# --- Datos ---
+data/raw/
+data/interim/
+data/processed/
+*.edf
+*.npz
+*.npy
+
+# --- Modelos entrenados ---
+models/
+*.pt
+*.pth
+*.pkl
+checkpoints*/
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# --- Entornos virtuales ---
+.venv/
+venv/
+env/
+*.conda
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+*.ipynb_checkpoints/
+
+# --- IDE ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Temporales ---
+tmp_*.py
+*.log
+*.tmp
+
+# --- Resultados grandes ---
+Flujo2/checkpoints*/
+Flujo2/preprocessed/
+Flujo2/features/
+Flujo2/spectrograms/
