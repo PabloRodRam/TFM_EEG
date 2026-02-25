@@ -22,21 +22,19 @@ El trabajo incluye un **diagnóstico y corrección de data leakage** que demuest
 ## Estructura del código
 
 ```
-github_annex/
 ├── requirements.txt              # Dependencias
 ├── .gitignore                    # Archivos excluidos
 ├── run_phase1_pipeline.py        # Pipeline Fase 1 (random partition)
 ├── run_phase3_pipeline.py        # Pipeline Fase 3 (protocolo corregido)
 ├── README.md                     # Este archivo
-└── seizure_prediction/           # Paquete principal
-    ├── __init__.py               # Metadatos del paquete
-    ├── config.py                 # Constantes e hiperparámetros
-    ├── data.py                   # Carga y parsing de CHB-MIT
-    ├── preprocessing.py          # Filtrado, segmentación, etiquetado
-    ├── features.py               # Extracción de features y STFT
-    ├── models.py                 # Arquitecturas DL (5 modelos + FocalLoss)
-    ├── training.py               # Entrenamiento, splits, calibración
-    └── evaluation.py             # Evaluación segment/event-based, firing rule
+├── __init__.py               # Metadatos del paquete
+├── config.py                 # Constantes e hiperparámetros
+├── data.py                   # Carga y parsing de CHB-MIT
+├── preprocessing.py          # Filtrado, segmentación, etiquetado
+├── features.py               # Extracción de features y STFT
+├── models.py                 # Arquitecturas DL (5 modelos + FocalLoss)
+├── training.py               # Entrenamiento, splits, calibración
+└── evaluation.py             # Evaluación segment/event-based, firing rule
 ```
 
 ---
@@ -195,3 +193,4 @@ Si utilizas este código, por favor cita:
 ## Licencia
 
 Este código se distribuye con fines académicos como anexo del TFM.
+
