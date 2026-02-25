@@ -90,20 +90,20 @@ def run_random_partition(
         subj_dir = raw_dir / subj
         summary_path = subj_dir / f"{subj}-summary.txt"
         if not summary_path.exists():
-            print(f"  ⚠ No se encontró summary para {subj}, saltando.")
+            print(f"No se encontró summary para {subj}, saltando.")
             continue
 
         records = parse_summary(summary_path)
         seizures_abs = compute_absolute_seizure_times(records)
         leading = select_leading_seizures(seizures_abs)
         if len(leading) < 3:
-            print(f"  ⚠ {subj}: solo {len(leading)} leading seizures, saltando.")
+            print(f"{subj}: solo {len(leading)} leading seizures, saltando.")
             continue
 
         # 2. Preprocesar (gamma + normalización + undersampling)
         result = process_subject(subj, raw_dir, seizures_abs)
         if result is None:
-            print(f"  ⚠ {subj}: error en preprocesamiento, saltando.")
+            print(f"{subj}: error en preprocesamiento, saltando.")
             continue
         X, y = result
 
@@ -231,3 +231,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
