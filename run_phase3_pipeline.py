@@ -103,20 +103,20 @@ def run_corrected_pipeline(
         subj_dir = raw_dir / subj
         summary_path = subj_dir / f"{subj}-summary.txt"
         if not summary_path.exists():
-            print(f"  ⚠ No se encontró summary para {subj}, saltando.")
+            print(f"No se encontró summary para {subj}, saltando.")
             continue
 
         records = parse_summary(summary_path)
         seizures_abs = compute_absolute_seizure_times(records)
         leading = select_leading_seizures(seizures_abs)
         if len(leading) < 3:
-            print(f"  ⚠ {subj}: solo {len(leading)} leading seizures, saltando.")
+            print(f"{subj}: solo {len(leading)} leading seizures, saltando.")
             continue
 
         # 2. Preprocesar broadband (sin undersampling)
         result = process_subject_v4(subj, raw_dir, seizures_abs)
         if result is None:
-            print(f"  ⚠ {subj}: error en preprocesamiento v4, saltando.")
+            print(f"{subj}: error en preprocesamiento v4, saltando.")
             continue
         X_raw, X_spec, X_svm, y = result
 
@@ -322,3 +322,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
